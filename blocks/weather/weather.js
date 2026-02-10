@@ -2,6 +2,8 @@ export default async function decorate(block) {
   const props = [...block.children];
   console.log(props);
   const firsttag = props[0].textContent.trim();
+  console.log('First tag is ');
+  console.log(firsttag);
   const container = document.createElement('table');
   const API_KEY = '3237161ae1634c9a8e051934260902';
   const location = 'ny';
@@ -10,12 +12,6 @@ export default async function decorate(block) {
   const response = await fetch(url,options);
   const data = await response.json();
 
-  
-  //const url = `https://20092-securbankdemo-stage.adobeio-static.net/api/v1/web/dx-excshell-1/forex?baseCurrency=${firsttag}`;
-  //const options = {};
-  //const forexReq = await fetch(url, options);
-  //const index = await forexReq.json();
-  // 3. Create HTML structure
   const weatherHTML = `
     <div class="weather-card">
       <h3>${data.location.name}</h3>
