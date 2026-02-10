@@ -1,4 +1,4 @@
-export default async function decorate(block) {
+/*export default async function decorate(block) {
   const props = [...block.children];
   console.log(props);
   const firsttag = props[0].textContent.trim();
@@ -26,7 +26,18 @@ export default async function decorate(block) {
   `;
   
   block.innerHTML = weatherHTML;
-  /*index.currencies
+  
+}*/
+export default async function decorate(block) {
+  const props = [...block.children];
+  console.log(props);
+  const firsttag = props[0].textContent.trim();
+  const container = document.createElement('table');
+  const url = `https://20092-securbankdemo-stage.adobeio-static.net/api/v1/web/dx-excshell-1/forex?baseCurrency=${firsttag}`;
+  const options = {};
+  const forexReq = await fetch(url, options);
+  const index = await forexReq.json();
+  index.currencies
     .forEach((currency) => {
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -38,5 +49,5 @@ export default async function decorate(block) {
       container.append(tr);
     });
   block.innerHTML = `<h2 class='sectionHeading'>Exchange Rates for the ${index.title}</h2>`;
-  block.append(container);*/
+  block.append(container);
 }
