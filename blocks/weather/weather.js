@@ -2,13 +2,14 @@ export default async function decorate(block) {
   const props = [...block.children];
   console.log(props);
   const firsttag = props[0].textContent.trim();
-  if (firsttag.length === 0) {
-    firsttag='delhi';
-  }
-  const container = document.createElement('table');
   const API_KEY = '3237161ae1634c9a8e051934260902';
   const location = 'ny';
   const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${firsttag}`;
+  if (firsttag.length === 0) {
+    url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=delhi`;
+  }
+  const container = document.createElement('table');
+  
   const options = {};
   const response = await fetch(url,options);
   const data = await response.json();
