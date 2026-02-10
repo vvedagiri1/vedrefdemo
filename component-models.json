@@ -6436,6 +6436,40 @@
     ]
   },
   {
+    "id": "weather",
+    "fields": [
+      {
+        "component": "select",
+        "name": "baseCity",
+        "value": "ny",
+        "label": "City",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Ney York",
+            "value": "ny"
+          },
+          {
+            "name": "Singapore",
+            "value": "singapore"
+          },
+          {
+            "name": "London",
+            "value": "london"
+          },
+          {
+            "name": "Sydney",
+            "value": "sydney"
+          },
+          {
+            "name": "Bangalore",
+            "value": "bangalore"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "accordion",
     "fields": [
       {
