@@ -4,9 +4,8 @@ export default async function decorate(block) {
   const firsttag = props[0].textContent.trim();
   if (firsttag.length === 0) {
     firsttag='delhi';
+    alert(firsttag)
   }
-  console.log('First tag is ');
-  console.log(firsttag);
   const container = document.createElement('table');
   const API_KEY = '3237161ae1634c9a8e051934260902';
   const location = 'ny';
