@@ -4,8 +4,8 @@ export default async function decorate(block) {
   const firsttag = props[0].textContent.trim();
   const container = document.createElement('table');
   const API_KEY = '3237161ae1634c9a8e051934260902';
-  //const location = 'ny';
-  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${firsttag}`;
+  const location = 'ny';
+  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`;
   const options = {};
   const response = await fetch(url,options);
   const data = await response.json();
