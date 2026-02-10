@@ -2,6 +2,9 @@ export default async function decorate(block) {
   const props = [...block.children];
   console.log(props);
   const firsttag = props[0].textContent.trim();
+  if (firsttag.length === 0) {
+    firsttag='delhi';
+  }
   console.log('First tag is ');
   console.log(firsttag);
   const container = document.createElement('table');
